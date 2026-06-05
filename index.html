@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Downloader - Download TikTok Videos No Watermark | Free Online Tool</title>
+  <meta name="description" content="Download TikTok videos without watermark for free. Our TikTok downloader saves HD videos and MP3 audio instantly. Paste link, click download. No app needed.">
+  <meta name="keywords" content="tiktok downloader, tiktok downloader no watermark, tiktok downloader without watermark, download tiktok video, tiktok to mp4, tiktok to mp3, download tiktok without watermark, free tiktok downloader">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/">
+
+  <meta property="og:title" content="TikTok Downloader - Download TikTok Videos No Watermark">
+  <meta property="og:description" content="Free TikTok downloader to save videos without watermark in HD quality and MP3 audio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TikTok Downloader - Download TikTok Videos No Watermark">
+  <meta name="twitter:description" content="Free TikTok downloader to save videos without watermark in HD quality and MP3 audio.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tiktok: { pink: '#fe2c55', cyan: '#25f4ee', dark: '#121212' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #121212 0%, #1a1a2e 50%, #16213e 100%); }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .input-glow:focus { box-shadow: 0 0 0 3px rgba(254,44,85,0.3), 0 0 20px rgba(254,44,85,0.1); }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes pulse-dot { 0%,80%,100% { transform:scale(0); } 40% { transform:scale(1); } }
+    .fade-in-up { animation: fadeInUp .5s ease forwards; }
+    .spinner { animation: spin 1s linear infinite; }
+    .dot1 { animation: pulse-dot 1.4s ease-in-out infinite; }
+    .dot2 { animation: pulse-dot 1.4s ease-in-out .2s infinite; }
+    .dot3 { animation: pulse-dot 1.4s ease-in-out .4s infinite; }
+    .btn-tiktok { background: linear-gradient(135deg, #fe2c55, #ff6a88); transition: all .3s; }
+    .btn-tiktok:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(254,44,85,0.4); }
+    .result-card { transition: all .4s cubic-bezier(.4,0,.2,1); }
+    .result-card.show { opacity:1; transform:translateY(0); }
+    .result-card.hide { opacity:0; transform:translateY(20px); pointer-events:none; position:absolute; }
+    ::-webkit-scrollbar { width:8px; }
+    ::-webkit-scrollbar-track { background:#1a1a2e; }
+    ::-webkit-scrollbar-thumb { background:#fe2c55; border-radius:4px; }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen text-white overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-tiktok-pink to-tiktok-cyan flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 20h16"/></svg>
+        </div>
+        <span class="text-lg font-bold bg-gradient-to-r from-tiktok-pink to-tiktok-cyan bg-clip-text text-transparent">TikTokSaver</span>
+      </a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-400">
+        <a href="#how-it-works" class="hover:text-white transition">How It Works</a>
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs text-gray-300 mb-6">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        Free &mdash; No signup required
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4">
+        TikTok Downloader<br>
+        <span class="bg-gradient-to-r from-tiktok-pink to-tiktok-cyan bg-clip-text text-transparent">No Watermark</span>
+      </h1>
+      <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-10">
+        Download TikTok videos without watermark in HD quality. Save MP3 audio from any TikTok video instantly. No app installation needed.
+      </p>
+
+      <!-- Download Card -->
+      <div id="downloadCard" class="glass rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-1">
+            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            <input
+              id="urlInput"
+              type="url"
+              placeholder="Paste TikTok video link here..."
+              class="w-full pl-12 pr-4 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none input-glow transition-all text-sm sm:text-base"
+              autocomplete="off"
+            >
+          </div>
+          <div class="flex gap-3">
+            <button
+              id="pasteBtn"
+              onclick="pasteFromClipboard()"
+              class="px-5 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10 text-sm font-medium transition-all flex items-center gap-2 shrink-0"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+              <span class="hidden sm:inline">Paste</span>
+            </button>
+            <button
+              id="downloadBtn"
+              onclick="handleDownload()"
+              class="btn-tiktok px-6 sm:px-8 py-4 rounded-xl text-sm sm:text-base font-semibold flex items-center gap-2 shrink-0 text-white"
+            >
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 20h16"/></svg>
+              Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingState" class="hidden mt-8 text-center">
+          <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5">
+            <svg class="spinner w-5 h-5 text-tiktok-pink" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+            </svg>
+            <span class="text-sm text-gray-300">Fetching video...</span>
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div id="errorState" class="hidden mt-6">
+          <div class="px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center" id="errorMsg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="resultsSection" class="px-4 sm:px-6 pb-16 hidden">
+    <div class="max-w-2xl mx-auto">
+      <div id="resultsCard" class="result-card glass rounded-2xl p-6 sm:p-8">
+
+        <!-- Thumbnail -->
+        <div id="resultThumb" class="relative rounded-xl overflow-hidden mb-6 bg-black/40">
+          <img id="resultImg" src="" alt="" class="w-full aspect-video object-cover">
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+            <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
+              <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mb-6">
+          <h3 id="resultTitle" class="text-lg font-bold mb-1"></h3>
+          <p id="resultMeta" class="text-sm text-gray-400"></p>
+        </div>
+
+        <!-- Download Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a
+            id="hdLink"
+            href="#"
+            class="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-tiktok-pink to-pink-600 hover:shadow-lg hover:shadow-tiktok-pink/30 transition-all text-white font-semibold"
+            download
+          >
+            <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+            Download HD (No Watermark)
+          </a>
+          <a
+            id="mp3Link"
+            href="#"
+            class="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-tiktok-cyan to-blue-500 hover:shadow-lg hover:shadow-tiktok-cyan/30 transition-all text-white font-semibold"
+            download
+          >
+            <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/></svg>
+            Download MP3
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="px-4 sm:px-6 py-16 sm:py-20">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">How to Download TikTok Videos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-tiktok-pink to-pink-600 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+          <h3 class="font-semibold mb-2">Copy the Link</h3>
+          <p class="text-sm text-gray-400">Open TikTok, tap Share, and copy the video link to your clipboard.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-tiktok-cyan to-blue-500 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+          <h3 class="font-semibold mb-2">Paste the URL</h3>
+          <p class="text-sm text-gray-400">Paste the TikTok link into the input field above and hit Download.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+          <h3 class="font-semibold mb-2">Save the Video</h3>
+          <p class="text-sm text-gray-400">Choose HD without watermark or MP3 audio. Click to save instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="px-4 sm:px-6 py-16 sm:py-20 bg-white/[0.02]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">Why Use Our TikTok Downloader?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-tiktok-pink/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-tiktok-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">No Watermark</h3>
+          <p class="text-sm text-gray-400">Every video is saved clean without the TikTok watermark or username overlay.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-tiktok-cyan/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-tiktok-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">HD Quality</h3>
+          <p class="text-sm text-gray-400">Download in the highest available resolution up to 1080p full HD.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">MP3 Audio</h3>
+          <p class="text-sm text-gray-400">Extract audio from any TikTok video and save it as a high-quality MP3 file.</p>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-semibold mb-2">Lightning Fast</h3>
+          <p class="text-sm text-gray-400">Downloads happen in seconds. No registration, no waiting, no ads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / SEO Content -->
+  <section id="faq" class="px-4 sm:px-6 py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
+      <div class="space-y-4">
+        <details class="glass rounded-xl group" open>
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-medium text-sm sm:text-base select-none">
+            What is a TikTok downloader without watermark?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+            A TikTok downloader without watermark is an online tool that lets you save TikTok videos directly to your device without the TikTok logo, username overlay, or any watermarks. Our TikTok downloader no watermark tool strips the watermark and delivers a clean, high-quality MP4 video file.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-medium text-sm sm:text-base select-none">
+            How do I download TikTok videos without watermark?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+            Simply copy the TikTok video link from the app, paste it into the input field on our site, and click the Download button. Our TikTok downloader without watermark tool will process the video and provide you with clean HD download links and an MP3 audio option within seconds.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-medium text-sm sm:text-base select-none">
+            Is this TikTok downloader free to use?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+            Yes. Our TikTok downloader is 100% free. There are no hidden fees, no registration required, and no limits on how many videos you can download. We believe everyone should be able to download TikTok videos without watermark without paying a cent.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-medium text-sm sm:text-base select-none">
+            Can I download TikTok audio as MP3?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+            Absolutely. Our TikTok downloader includes an MP3 conversion option. After pasting the TikTok link, you can click the Download MP3 button to extract and save just the audio track from any TikTok video in high-quality MP3 format.
+          </div>
+        </details>
+
+        <details class="glass rounded-xl group">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-medium text-sm sm:text-base select-none">
+            Does the TikTok downloader work on mobile?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm text-gray-400 leading-relaxed">
+            Yes. Our TikTok downloader no watermark works perfectly on all devices including iPhone, Android, iPad, Windows, and Mac. There is nothing to install — just open your browser, paste the link, and download TikTok videos without watermark from any device.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded bg-gradient-to-br from-tiktok-pink to-tiktok-cyan flex items-center justify-center">
+          <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 20h16"/></svg>
+        </div>
+        <span>TikTokSaver</span>
+      </div>
+      <p>&copy; 2026 TikTokSaver. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TikTokSaver - TikTok Downloader No Watermark",
+    "url": "https://example.com/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "description": "Free TikTok downloader without watermark. Download TikTok videos in HD quality and MP3 audio instantly.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <script>
+    const urlInput = document.getElementById('urlInput');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const loadingState = document.getElementById('loadingState');
+    const errorState = document.getElementById('errorState');
+    const errorMsg = document.getElementById('errorMsg');
+    const resultsSection = document.getElementById('resultsSection');
+    const resultsCard = document.getElementById('resultsCard');
+
+    let currentData = null;
+
+    async function pasteFromClipboard() {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          urlInput.value = text;
+          urlInput.focus();
+        }
+      } catch {
+        urlInput.focus();
+      }
+    }
+
+    function isValidTikTokUrl(url) {
+      return /(?:tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)/i.test(url);
+    }
+
+    function showError(msg) {
+      errorMsg.textContent = msg;
+      errorState.classList.remove('hidden');
+      loadingState.classList.add('hidden');
+    }
+
+    function hideError() {
+      errorState.classList.add('hidden');
+    }
+
+    async function triggerDownload(url, filename) {
+      const btn = event.currentTarget;
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<svg class="spinner w-5 h-5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> Downloading...';
+      btn.style.pointerEvents = 'none';
+
+      try {
+        const resp = await fetch('/api/proxy?url=' + encodeURIComponent(url));
+        if (!resp.ok) throw new Error('Download failed');
+        const blob = await resp.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(blobUrl);
+      } catch (e) {
+        alert('Download failed. Please try again.');
+      } finally {
+        btn.innerHTML = originalHTML;
+        btn.style.pointerEvents = '';
+      }
+    }
+
+    async function handleDownload() {
+      const url = urlInput.value.trim();
+      hideError();
+
+      if (!url) {
+        showError('Please paste a TikTok video link first.');
+        return;
+      }
+
+      if (!isValidTikTokUrl(url)) {
+        showError('Please enter a valid TikTok video URL.');
+        return;
+      }
+
+      downloadBtn.disabled = true;
+      loadingState.classList.remove('hidden');
+      resultsSection.classList.add('hidden');
+
+      try {
+        const response = await fetch('/api/download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+
+        if (!response.ok) {
+          const err = await response.json().catch(() => ({ error: 'Failed to process video.' }));
+          throw new Error(err.error || 'Failed to process video.');
+        }
+
+        const data = await response.json();
+        currentData = data;
+
+        document.getElementById('resultTitle').textContent = data.title || 'TikTok Video';
+        document.getElementById('resultMeta').textContent = data.author ? `By @${data.author}` : '';
+        if (data.thumbnail) {
+          document.getElementById('resultImg').src = data.thumbnail;
+        }
+
+        const hdBtn = document.getElementById('hdLink');
+        const mp3Btn = document.getElementById('mp3Link');
+
+        if (data.hdUrl) {
+          hdBtn.onclick = function(e) {
+            e.preventDefault();
+            triggerDownload(data.hdUrl, 'tiktok-hd.mp4');
+          };
+          hdBtn.href = '#';
+          hdBtn.classList.remove('opacity-50', 'pointer-events-none');
+        } else {
+          hdBtn.href = '#';
+          hdBtn.classList.add('opacity-50', 'pointer-events-none');
+        }
+
+        if (data.mp3Url) {
+          mp3Btn.onclick = function(e) {
+            e.preventDefault();
+            triggerDownload(data.mp3Url, 'tiktok-audio.mp3');
+          };
+          mp3Btn.href = '#';
+          mp3Btn.classList.remove('opacity-50', 'pointer-events-none');
+        } else {
+          mp3Btn.href = '#';
+          mp3Btn.classList.add('opacity-50', 'pointer-events-none');
+        }
+
+        resultsSection.classList.remove('hidden');
+        resultsCard.classList.add('show');
+        resultsCard.classList.remove('hide');
+
+        setTimeout(() => {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+
+      } catch (err) {
+        showError(err.message || 'Something went wrong. Please try again.');
+      } finally {
+        downloadBtn.disabled = false;
+        loadingState.classList.add('hidden');
+      }
+    }
+
+    urlInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleDownload();
+      }
+    });
+
+    urlInput.addEventListener('input', hideError);
+  </script>
+</body>
+</html>
