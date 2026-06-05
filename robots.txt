@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://tiktok-downloader-17i6.onrender.com/sitemap.xml
