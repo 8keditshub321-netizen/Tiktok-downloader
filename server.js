@@ -13,6 +13,22 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/privacy-policy.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'privacy-policy.html'));
+});
+
+app.get('/about-us.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about-us.html'));
+});
+
+app.get('/terms-conditions.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'terms-conditions.html'));
+});
+
+app.get('/contact-us.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact-us.html'));
+});
+
 // Use tikwm.com API to get TikTok video info (no watermark, free)
 async function fetchTikTokInfo(tiktokUrl) {
   const form = new FormData();
@@ -105,6 +121,17 @@ app.get('/api/proxy', async (req, res) => {
     console.error('Proxy error:', err.message);
     res.status(500).json({ error: 'Failed to download file' });
   }
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
+});
+
+// 500 handler
+app.use((err, req, res, next) => {
+  console.error('Server error:', err.stack);
+  res.status(500).sendFile(path.join(__dirname, '500.html'));
 });
 
 app.listen(PORT, () => {
