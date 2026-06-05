@@ -19,12 +19,16 @@ A responsive, modern TikTok downloader landing page with a Node.js backend that 
 
 ```
 Tiktok downloader/
-├── index.html          # Landing page (Tailwind CSS + vanilla JS)
-├── server.js           # Express backend (API + proxy)
-├── package.json        # Dependencies
-├── node_modules/       # Auto-generated
-├── .gitignore          # Git ignore rules
-└── TikTok-Downloader.md  # This file
+├── index.html              # Landing page (Tailwind CSS + vanilla JS)
+├── server.js               # Express backend (API + proxy)
+├── package.json            # Dependencies
+├── package-lock.json       # Locked dependency versions
+├── robots.txt              # Crawler rules for search engines
+├── sitemap.xml             # XML sitemap for Google indexing
+├── Tiktok downloader icon.jpg  # Favicon and logo icon
+├── node_modules/           # Auto-generated
+├── .gitignore              # Git ignore rules
+└── TikTok-Downloader.md    # This file
 ```
 
 ---
@@ -38,11 +42,18 @@ Tiktok downloader/
 - Results card with **Download HD (No Watermark)** and **Download MP3** buttons
 - Smooth animations and transitions
 - Fully responsive (mobile, tablet, desktop)
+- Favicon and apple-touch-icon from custom icon file
+- Logo uses custom icon with rounded corners
+- Downloads saved with original video title as filename
 - SEO-optimized:
   - Meta tags (title, description, keywords)
   - Open Graph + Twitter Card tags
-  - JSON-LD structured data
-  - FAQ section targeting keywords: "tiktok downloader no watermark", "tiktok downloader without watermark"
+  - JSON-LD structured data (WebApplication + FAQPage)
+  - robots.txt for crawler rules
+  - sitemap.xml for Google indexing
+  - FAQ section (9 items) targeting keywords: "tiktok downloader no watermark", "tiktok downloader without watermark", "tiktok downloader hd", "tiktok downloader mp3"
+  - Dedicated HD content section targeting "tiktok downloader hd"
+  - Dedicated MP3 content section targeting "tiktok downloader mp3"
   - Semantic HTML with `how-it-works`, `features`, `faq` sections
 - Enter key support on input field
 - Proxy-based downloads (avoids CORS issues)
@@ -163,6 +174,14 @@ Proxies the file and serves it as a download attachment.
 - [x] Local testing verified working
 - [x] Push to GitHub
 - [x] Deploy to Render.com
+- [x] Favicon and logo with custom icon
+- [x] Download filenames use original video title
+- [x] Fixed download arrow icon direction
+- [x] robots.txt and sitemap.xml
+- [x] HD and MP3 dedicated SEO content sections
+- [x] FAQ structured data for rich snippets
+- [x] 9 FAQ items covering all target keywords
+- [x] UptimeRobot keepalive configured
 - [ ] Custom domain (optional)
 
 ---
@@ -173,3 +192,6 @@ Proxies the file and serves it as a download attachment.
 - TikTok video URLs from the API expire after some time — downloads must happen promptly
 - MP3 extraction depends on tikwm.com providing the `music` field in their response
 - Free tier on Render spins down after 15 min — use a keepalive ping for always-on
+- UptimeRobot configured to ping every 5 minutes to prevent sleep
+- Target keywords: "tiktok downloader" (100K+), "tiktok downloader hd", "tiktok downloader no watermark", "tiktok downloader without watermark", "tiktok downloader mp3"
+- Submit sitemap to Google Search Console for faster indexing
