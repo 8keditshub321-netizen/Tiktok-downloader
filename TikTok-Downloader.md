@@ -76,6 +76,8 @@ node server.js
 
 Open `http://localhost:3000` in your browser.
 
+**Live:** https://tiktok-downloader-17i6.onrender.com/
+
 ---
 
 ## Deployment (Render.com)
@@ -159,8 +161,8 @@ Proxies the file and serves it as a download attachment.
 - [x] Loading states and error handling
 - [x] SEO meta tags and structured data
 - [x] Local testing verified working
-- [ ] Push to GitHub
-- [ ] Deploy to Render.com
+- [x] Push to GitHub
+- [x] Deploy to Render.com
 - [ ] Custom domain (optional)
 
 ---
