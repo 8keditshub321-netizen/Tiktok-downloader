@@ -116,7 +116,7 @@
               onclick="handleDownload()"
               class="btn-tiktok px-6 sm:px-8 py-4 rounded-xl text-sm sm:text-base font-semibold flex items-center gap-2 shrink-0 text-white"
             >
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 16V4m0 0l-4 4m4-4l4 4M4 20h16"/></svg>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
               Download
             </button>
           </div>
@@ -344,6 +344,10 @@
 
     let currentData = null;
 
+    function sanitizeFilename(name) {
+      return (name || 'tiktok-video').replace(/[^a-zA-Z0-9 _-]/g, '').replace(/\s+/g, '_').substring(0, 80);
+    }
+
     async function pasteFromClipboard() {
       try {
         const text = await navigator.clipboard.readText();
@@ -441,7 +445,7 @@
         if (data.hdUrl) {
           hdBtn.onclick = function(e) {
             e.preventDefault();
-            triggerDownload(data.hdUrl, 'tiktok-hd.mp4');
+            triggerDownload(data.hdUrl, sanitizeFilename(data.title) + '.mp4');
           };
           hdBtn.href = '#';
           hdBtn.classList.remove('opacity-50', 'pointer-events-none');
@@ -453,7 +457,7 @@
         if (data.mp3Url) {
           mp3Btn.onclick = function(e) {
             e.preventDefault();
-            triggerDownload(data.mp3Url, 'tiktok-audio.mp3');
+            triggerDownload(data.mp3Url, sanitizeFilename(data.title) + '.mp3');
           };
           mp3Btn.href = '#';
           mp3Btn.classList.remove('opacity-50', 'pointer-events-none');
